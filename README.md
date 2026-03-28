@@ -38,11 +38,11 @@
 
 1. **注册免费账户**：https://typst.app/ 
 2. **新建项目**：在 Dashboard 页面，点击 Empty document 大按钮。
-3. **上传代码**：将本地「编译用代码/」里的所有内容，上传至项目。
-4. **指定预览文件**：选中 `main.typ` 文件，右键设为预览文件。
+3. **上传资源**：将本地「编译用代码/」里的所有内容，上传至 Typst 在线编辑器。
+4. **指定预览文件**：在侧边栏选中 `main.typ` 文件，右键设为预览文件。
 5. **完成**：导出 pdf。
     * 修改代码，可以参考 `代码说明.pdf`。
-    * 只读项目地址：https://typst.app/project/rh30kTYz7JlHgiY2e0m3T4
+    * 只读示例：https://typst.app/project/rh30kTYz7JlHgiY2e0m3T4
 
 ### 使用协议：
 
