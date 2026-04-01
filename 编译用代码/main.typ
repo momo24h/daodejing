@@ -9,7 +9,7 @@
 
 // 设置 PDF 元数据。
 #set document(
-  title: "老子道德经：四种原文表 v0.1.1",
+  title: "老子道德经：四种原文表 v0.1.2",
   author: "https://github.com/tt24h/daodejing",
   description: "四种老子道德经原文：王弼本、马王堆帛书本、郭店楚简本、北大汉简本。",
   keywords: ("老子", "道德经", "老子道德经")
