@@ -30,9 +30,8 @@
 ### 下载：
 
 在 **Releases** 中下载已编译好的 PDF 文件：
-* `daodejing.pdf` => `老子道德经：四种原文表.pdf`。
-* `code_logic.pdf` => `代码说明.pdf`。
-
+* 老子道德经：四种原文表.pdf => `daodejing.pdf` [下载](https://github.com/tt24h/daodejing/releases/latest/download/daodejing.pdf) 。
+* 代码说明.pdf => `code_logic.pdf` [下载](https://github.com/tt24h/daodejing/releases/latest/download/code_logic.pdf ) 。
 
 ### 编辑、编译 pdf 文件：
 
@@ -55,7 +54,7 @@
    * 花园字体
    * GlyphWiki。
 
-字体文件放在「编译用代码/」内。
+字体文件放在「./编译用代码/」内。
 
 
 
