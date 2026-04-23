@@ -18,7 +18,7 @@
 
 老子道德经：四种原文表.pdf：[下载](https://github.com/tt24h/daodejing/releases/latest/download/daodejing.pdf)
 * 文件：Releases → `daodejing.pdf`
-* 在 工具/ 内，有 编辑、编译 pdf 文件的指南。
+* 在 工具/ 内，有 编辑、编译 pdf 的指南。
 
 ### 使用协议：
 
