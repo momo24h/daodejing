@@ -206,12 +206,16 @@ async function loadPage(num) {
 elements.prevBtn.onclick = () => loadPage(elements.currentPage - 1);
 elements.nextBtn.onclick = () => loadPage(elements.currentPage + 1);
 
-function scrollToTop() {
-    document.documentElement.scrollTo({ top: 0, behavior: 'smooth' });
-    document.body.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-document.getElementById('back-to-top').addEventListener('click', scrollToTop);
+document.getElementById('back-to-top').addEventListener('click', () => {
+    const scrollTop = () => {
+        const current = document.documentElement.scrollTop || document.body.scrollTop;
+        if (current > 0) {
+            window.requestAnimationFrame(scrollTop);
+            window.scrollTo(0, current - current / 8);
+        }
+    };
+    scrollTop();
+});
 
 window.onhashchange = () => {
     const hashPage = parseInt(window.location.hash.replace('#p', ''));
