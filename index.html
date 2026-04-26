@@ -139,8 +139,7 @@
             <td class="footer-cell">
 
 <button class="action-btn" 
-        id="back-to-top" 
-        onclick="window.scrollBy({ top: -99999, behavior: 'smooth' });">
+        id="back-to-top">
     回到顶部
 </button>
 
@@ -233,7 +232,9 @@
 
         elements.prevBtn.onclick = () => loadPage(elements.currentPage - 1);
         elements.nextBtn.onclick = () => loadPage(elements.currentPage + 1);
-
+document.getElementById('back-to-top').addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
         window.onhashchange = () => {
             const hashPage = parseInt(window.location.hash.replace('#p', ''));
