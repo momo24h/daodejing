@@ -82,7 +82,7 @@
             top: 50px; 
             left: 0;
             right: 0;
-            background: rgba(255, 243, 205, 0.95); 
+            background: rgba(255, 243, 205, 0.98); 
             color: #856404;
             padding: 8px 15px;
             font-size: 13px;
@@ -92,6 +92,15 @@
             border-bottom: 1px solid rgba(255, 238, 186, 0.5);
             z-index: 999;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            
+            animation: autoFadeOut 5s linear forwards;
+            pointer-events: auto; 
+        }
+
+        @keyframes autoFadeOut {
+            0% { opacity: 1; }
+            90% { opacity: 0.1; pointer-events: auto; }
+            100% { opacity: 0; visibility: hidden; pointer-events: none; }
         }
 
         .notice-content {
@@ -124,7 +133,7 @@
         .svg-container {
             display: inline-block;
             transform-origin: top left;
-            padding: 40px 40px 40px 40px;
+            padding: 40px;
             box-sizing: border-box;
             transition: margin-left 0.1s ease-out;
         }
@@ -177,7 +186,7 @@
 
     <div id="notice-banner" class="notice-banner">
         <div class="notice-content">
-            ⚠️ 本版内容为图片。<a href="https://tt24h.github.io" target="_blank" style="color:#0056b3; text-decoration:none; font-weight:bold;">PDF 版下载页</a>
+            ⚠️ 本版的内容为图片。<a href="https://tt24h.github.io" target="_blank" style="color:#0056b3; text-decoration:none; font-weight:bold;">PDF 版下载页</a>
         </div>
         <button id="close-notice" class="close-banner-btn" title="关闭提示">×</button>
     </div>
@@ -245,6 +254,7 @@
             
             const hash = parseInt(window.location.hash.replace('#', ''));
             loadPage((hash > 0 && hash <= CONFIG.totalPage) ? hash : 1);
+            
         }
 
         async function loadPage(num) {
@@ -290,12 +300,8 @@
         document.addEventListener('gesturestart', (e) => e.preventDefault(), false);
         document.addEventListener('gesturechange', (e) => e.preventDefault(), false);
 
-        document.getElementById('zoom-in').onclick = () => {
-            updateZoom(scale + 0.2);
-        };
-        document.getElementById('zoom-out').onclick = () => {
-            updateZoom(scale - 0.2);
-        };
+        document.getElementById('zoom-in').onclick = () => updateZoom(scale + 0.2);
+        document.getElementById('zoom-out').onclick = () => updateZoom(scale - 0.2);
         
         elements.select.onchange = (e) => loadPage(e.target.value);
         elements.prevBtn.onclick = () => loadPage(parseInt(elements.select.value) - 1);
