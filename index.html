@@ -6,11 +6,6 @@
 <title>老子道德经：四种原文表（网页版）</title>
 <style>
 
-    html, body {
-    height: 100%;
-    overflow-y: auto;
-}
-
 :root {
     --primary-bg: #fdfaf2; 
     --btn-bg: #e8e2d2; 
@@ -93,6 +88,8 @@ body {
 </style>
 </head>
 <body>
+
+    <div id="header-top" style="height:0; width:0;"></div>
 <table id="main-layout">
 <colgroup>
     <col class="side-spacer"> <col class="main-column"> <col class="side-spacer"> 
@@ -212,10 +209,15 @@ async function loadPage(num) {
 elements.prevBtn.onclick = () => loadPage(elements.currentPage - 1);
 elements.nextBtn.onclick = () => loadPage(elements.currentPage + 1);
 
-document.getElementById('back-to-top').addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+document.getElementById('back-to-top').onclick = function(e) {
+    e.preventDefault();
+    const target = document.getElementById('header-top');
 
+    target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
+};
 window.onhashchange = () => {
     const hashPage = parseInt(window.location.hash.replace('#p', ''));
     if(hashPage && hashPage !== elements.currentPage) loadPage(hashPage);
