@@ -309,6 +309,24 @@
             }
         }
 
+        document.addEventListener('gesturestart', function(e) {
+            e.preventDefault();
+        }, false);
+
+        document.addEventListener('gesturechange', function(e) {
+            e.preventDefault();
+        }, false);
+
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function(e) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                e.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+
+
         document.getElementById('zoom-in').onclick = () => updateZoom(scale + 0.2);
         document.getElementById('zoom-out').onclick = () => updateZoom(scale - 0.2);
         elements.select.onchange = (e) => loadPage(e.target.value);
