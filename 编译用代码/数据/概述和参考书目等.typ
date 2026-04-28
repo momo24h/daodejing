@@ -22,7 +22,7 @@
 
 #I缩进I;项目仓库内还有：生成本 PDF 的 Typst 格式代码、代码说明。本 PDF 用到的自制老子道德经补充字体，字典、字典工具的介绍，从生成代码中提取原文的工具。
 
-#I缩进I;本资料还有在线版，基于本 PDF 导出的 SVG 图片构建，无需 PDF 阅读软件就可以查看，但是内容是图片。网址：https://tt24h.github.io/daodejing
+#I缩进I;本资料还有在线版，基于本 PDF 导出的 SVG 图片制作，无需 PDF 阅读软件就可以查看，但内容是图片。网址：https://tt24h.github.io/daodejing
 
 
 

@@ -53,25 +53,35 @@
 }
 
 #set text(font:("Noto Serif CJK SC",), size:12pt,)
-#set par(spacing: 1.2em, leading: 1.2em, justify: true )
-#set page(paper:"a4", margin:(x:3.2cm, y:2.54cm), numbering:"1",)
+#set par(spacing: 1.1em, leading: 1.1em, justify: true )
+#set page(
+  paper:"a4",
+  margin:(x:3.2cm, y:2.54cm),
+  numbering:"1",
+  header: context [
+    #set text(size:0.8em)
+    #set align(center)
+    老子道德经：四种原文表（校订文）
+  ],
+)
 
 #show heading.where(level:1) : it => [
   #set text(size:10pt,weight:"regular"); 
-  #box(it, fill: silver, radius: 1.2pt, inset: (x:2pt, y:2pt))
+  #it
 ]
 #show regex("¶") :it => {
   text(font:"Noto Color Emoji", it, top-edge:1pt, baseline: -0.06em)
 }
 
 #table(
-  columns: (2.2em, 1fr),
-  inset: (x:0%, y:1em),
+  align: (top+ left, top + right),
+  columns: (1fr, 2em),
+  inset: (x:0pt, y:1em),
   stroke: none,
   ..I提取文本I(H数组-校订本数据H).map(x =>
     ( 
-      heading(level: 1, "S"+H汉转阿拉伯H(x.first().replace(regex("第|章"),""))),
-      x.last()
+      x.last(),
+      heading(level: 1, H汉转阿拉伯H(x.first().replace(regex("第|章"),"")))
     )
   ).flatten()
 )
