@@ -294,25 +294,25 @@ function loadPage(num) {
 
     const img = new Image();
     img.src = url;
-    img.style.width = "900px";
-    img.style.display = "block";
-    img.style.margin = "0 auto";
 
     img.onload = () => {
+
         elements.content.innerHTML = ''; 
         elements.content.appendChild(img); 
         
         elements.trigger.classList.remove('loading');
         updateUI(pageNum);
+        
+        window.scrollTo(0, 0); 
     };
 
     img.onerror = () => {
         elements.content.innerHTML = `<div class="error-msg">载入失败</div>`;
         elements.trigger.classList.remove('loading');
-        updateUI(pageNum);
+        elements.prevBtn.disabled = pageNum <= 1;
+        elements.nextBtn.disabled = pageNum >= CONFIG.totalPage;
     };
 }
-
 function updateUI(pageNum) {
     const items = elements.dropdown.querySelectorAll('.dropdown-item');
     items.forEach(item => {
