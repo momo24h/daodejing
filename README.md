@@ -16,7 +16,7 @@
 
 ### 下载：
 
-老子道德经：四种原文表.pdf：[下载](https://github.com/tt24h/daodejing/releases/latest/download/daodejing.pdf) | [网页](https://tt24h.github.io/daodejing/)
+老子道德经：四种原文表.pdf：[下载](https://github.com/tt24h/daodejing/releases/latest/download/daodejing.pdf) | [网页](https://tt24h.github.io/daodejing/#p6)
 * 文件：https://github.com/tt24h/daodejing/releases → `daodejing.pdf`
 * 网页版的内容为 svg 图片，由 pdf 版转换来的。
 * 在 工具/ 内，有 编辑、编译 pdf 的指南。
